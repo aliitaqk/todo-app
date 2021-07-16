@@ -12,14 +12,14 @@ function App() {
         id: 1,
         text: "Meeting",
         day: "July, 16th Friday, 11:00am",
-        done: false,
+        done: true,
         archived: false,
     },
     {
         id: 2,
         text: "Push my application",
         day: "July, 16th Friday, 2:30pm",
-        done: false,
+        done: true,
         archived: false,
     },
     {
