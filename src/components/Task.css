@@ -1,0 +1,30 @@
+.task {
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px 10px;
+}
+
+.task.done {
+    background-color: rgba(186, 186, 186, 0.426);
+    color: grey;
+    text-decoration: line-through;
+    border: none;
+    padding: 6px 11px;
+}
+
+.task > h3, p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.archive {
+    color: grey;
+}
+
+.archive.done {
+    color: blue;
+    cursor: pointer;
+}
