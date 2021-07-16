@@ -1,9 +1,8 @@
 .App {
     max-width: 500px;
     margin: 30px auto;
-    /* overflow: auto; */
-    min-height: 300px;
-    border: 1px solid steelblue;
+    min-height: 150px;
+    border: 1px solid rgb(70, 94, 114);
     padding: 30px;
     border-radius: 5px;
 }
