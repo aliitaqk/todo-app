@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import './AddTask.css'
+import './style/AddTask.css'
 
 function AddTask(props) {
 

@@ -2,7 +2,8 @@ import React from 'react';
 import { FaTimes } from 'react-icons/fa';
 import { MdDone } from 'react-icons/md';
 import { RiArchiveDrawerFill } from 'react-icons/ri';
-import './Task.css'
+import './style/Task.css'
+
 function Task(props) {
     return (
         <div className={`task ${props.task.done ? "done": ""}`}>

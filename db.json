@@ -1,0 +1,35 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "text": "Meeting",
+      "day": "July, 16th Friday, 11:00am",
+      "done": true,
+      "archived": false
+    },
+    {
+      "id": 2,
+      "text": "Push my application",
+      "day": "July, 16th Friday, 2:30pm",
+      "done": true,
+      "archived": false
+    },
+    {
+      "id": 3,
+      "text": "Do my sport",
+      "day": "July, 16th Friday, 4:30pm",
+      "done": false,
+      "archived": false
+    },
+    {
+      "id": 4,
+      "text": "Prepare the dinner",
+      "day": "July, 16th Friday, 7:00pm",
+      "done": false,
+      "archived": false
+    }
+  ],
+  "deletedTasks": {
+    "value": 10
+  }
+}
