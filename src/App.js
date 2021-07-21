@@ -63,17 +63,14 @@ const doneTask = async (id) => {
 }
 
 const archiveTask = async (id) => {
-  // await axios.delete(`http://localhost:5000/tasks/${id}`)
   const taskArchived = await fetchTask(id)
   const updatedTask = { ...taskArchived, archived: !taskArchived.archived }
 
   axios.put(`http://localhost:5000/tasks/${id}`, JSON.stringify(updatedTask), {
     headers: {'Content-Type': 'application/json'}
   }).then(response => {
-    setTasks(tasks.filter(task => task.id !== response.data.id))
-    // setTasks(tasks.map(
-    //   task => task.id === id ? {...task, done: response.data.done} : task
-    // ))
+    setTasks(tasks.map(
+      task => task.id === response.data.id ? {...task, archived: response.data.archived } : task ))
   })
 }
 
