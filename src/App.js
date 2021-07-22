@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Tasks from './components/Tasks';
 import AddTask from './components/AddTask';
-import ArchivedTasks from './components/style/ArchivedTasks';
+import ArchivedTasks from './components/ArchivedTasks';
 import { useState, useEffect } from 'react'
 import { BrowserRouter, Route } from 'react-router-dom';
 import axios from 'axios';
@@ -59,7 +59,13 @@ const doneTask = async (id) => {
       task => task.id === id ? {...task, done: response.data.done} : task
     ))
   })
+}
 
+const deleteTask = async (id) => {
+  if (window.confirm('Are you sure you want to delete this todo item ?')) {
+    axios.delete(`http://localhost:5000/tasks/${id}`)
+    setTasks(tasks.filter(task => task.id !== id))
+  }
 }
 
 const archiveTask = async (id) => {
@@ -86,7 +92,7 @@ return (
       )} />
       <Route path="/archived" render = {(props) => (
         <>
-          <ArchivedTasks tasks={ tasks } onDone={ doneTask } onArchive={ archiveTask } />
+          <ArchivedTasks tasks={ tasks } onDelete={ deleteTask } onArchive={ archiveTask } />
         </>
       )} />
       <Route path="/about" component = { About } />

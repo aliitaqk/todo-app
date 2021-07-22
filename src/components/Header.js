@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import './style/Header.css';
 import PropType from 'prop-types'
 import Button from './Button';
@@ -10,13 +10,21 @@ function Header(props) {
 
   return (
     <div className="header">
-      <h1>{ props.title }</h1>
-      { location.pathname === '/' && <Button
-        color={ props.showAddForm ? "red": "green" }
-        text={ props.showAddForm ? "Close": "Add" }
-        onClick={props.toggleForm}
-      />}
+      <div class="top-bar">
+        <h1><Link to="/">{ props.title }</Link></h1>
+        { location.pathname === '/' && <Button
+          color={ props.showAddForm ? "red": "green" }
+          text={ props.showAddForm ? "Close": "Add" }
+          onClick={props.toggleForm}
+        />}
+      </div>
+      <div className="section-link">
+        <Link className="section-link-button" to="/">Home</Link>
+        <Link className="section-link-button" to="/archived">Archived</Link>
+        <Link className="section-link-button" to="/about">About</Link>
+      </div>
     </div>
+
   )
 }
 

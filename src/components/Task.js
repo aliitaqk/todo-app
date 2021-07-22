@@ -9,9 +9,11 @@ function Task(props) {
         <div className={`task ${props.task.done ? "done": ""}`}>
             <h3>
                 { props.task.text }
-                { props.task.done ? 
-                    <FaTimes style={{ cursor: "pointer"  }} onClick={ () => props.onDone(props.task.id) } /> : 
-                    <MdDone style={{ color:"red", cursor: "pointer"  }} onClick={ () => props.onDone(props.task.id) } />
+                { !props.task.done ? 
+                    <MdDone style={{ color:"green", cursor: "pointer"  }} onClick={ () => props.onDone(props.task.id) } /> :
+                    props.task.archived ?
+                    <FaTimes style={{ color:"red", cursor: "pointer"  }} onClick={ () => props.onDone(props.task.id) } /> :
+                    <FaTimes style={{ cursor: "pointer"  }} onClick={ () => props.onDone(props.task.id) } />
                 }
             </h3>
             <p>
